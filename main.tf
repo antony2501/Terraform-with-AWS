@@ -1,18 +1,18 @@
 terraform {
   required_providers {
-    morpheus = {
-      source  = "gomorpheus/morpheus"
-      version = ">= 0.0.0"
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.0"
     }
   }
 }
 
-provider "morpheus" {
-  url   = var.morpheus_url
-  token = var.morpheus_api_token
+provider "aws" {
+  region     = var.aws_region
+  access_key = var.aws_access_key_id
+  secret_key = var.aws_secret_access_key
 }
 
-resource "local_file" "hello" {
-  content  = "Hello from Terraform!"
-  filename = "${path.module}/hello.txt"
+resource "aws_s3_bucket" "this" {
+  bucket = var.bucket_name
 }
