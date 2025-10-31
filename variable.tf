@@ -1,23 +1,13 @@
-variable "aws_region" {
-  description = "AWS region"
-  type        = string
-  default     = "ap-southeast-1"
+variable "access_key" {
+  type = string
 }
 
-variable "aws_access_key_id" {
-  description = "AWS Access Key ID"
-  type        = string
-  sensitive   = true
+
+variable "secret_key" {
+  type = string
 }
 
-variable "aws_secret_access_key" {
-  description = "AWS Secret Access Key"
-  type        = string
-  sensitive   = true
+variable "region" {
+  type = string
+  default = "<%=customOptions.awsRegion>"
 }
-
-variable "bucket_name" {
-  description = "S3 bucket name"
-  type        = string
-}
-
