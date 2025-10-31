@@ -9,5 +9,5 @@ variable "secret_key" {
 
 variable "region" {
   type = string
-  default = "<%=customOptions.awsRegion>"
+  default = "<%=customOptions.awsRegion%>"
 }
